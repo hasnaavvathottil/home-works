@@ -13,44 +13,6 @@ def sq_tables(x):
         print ("{:3} |".format(i*j),end="")
       print ("")
 
-
-def panagram(string):
-   alpha=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z']
-   d={}
-   for i in string:
-      if(i in d):
-         d[i]=d[i]+1
-      else:
-         d[i]=1
-   for a in alpha:
-      if((a in d)==False):
-         return False
-   return True
-         
-
-def freq(string):
-   d={}
-   for i in string:
-      if(i in d):
-         d[i]=d[i]+1
-      else:
-         d[i]=1
-   return d
-
-
-def freq2(string):
-   d={}
-   for i in string:
-      if(i in d):
-         d[i]=d[i]+1
-      else:
-         d[i]=1
-   for k in list(d):
-      print (k,': ', end="")
-      for m in range(d[k]):
-        print ("#",end="")
-      print ("")       
-
 def fizzbizz(x):
    for i in range(1,x+1):
       if(i%15==0):
@@ -90,4 +52,47 @@ def breakdown2(x,dic):
                print ("{:4} x {:4} = {:4} ({:5})".format(c,y,c*y,z-x))
     if((x)>0):
        print (x," is left over")
-          
+
+def freq(string):
+   d={}
+   for i in string:
+      if i in d:
+         d[i]=d[i]+1
+      else:
+         d[i]=1
+   return d
+
+def freq2(string):
+   d={}
+   for i in string:
+      if(i in d):
+         d[i]=d[i]+1
+      else:
+         d[i]=1
+   for k in list(d):
+      print (k,': ', end="")
+      for m in range(d[k]):
+        print ("#",end="")
+      print ("")    
+
+def panagram(string):
+   alpha=['abcdefghijklmnopqrstuvwxyz']
+   d={}
+   for i in string:
+      if(i in d):
+         d[i]=d[i]+1
+      else:
+         d[i]=1
+   for a in alpha:
+      if((a in d)==False):
+         return False
+   return True
+                     
+
+def panagram(s):
+   for i in 'abcdefghijklmnopqrstuvwxyz':
+      if i not in s:
+         print ("{} is not found".format(s))
+         return False
+   return True
+                     
